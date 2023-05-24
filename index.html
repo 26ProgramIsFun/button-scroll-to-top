@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Tombol Menuju Halaman Atas</title>
+        <style>
+            body {
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 20px;
+            }
+
+            .tombol {
+                display: none;
+                position: fixed;
+                bottom: 20px;
+                right: 30px;
+                z-index: 99;
+                font-size: 18px;
+                border: none;
+                outline: none;
+                background-color: #0f0;
+                color: white;
+                cursor: pointer;
+                padding: 15px;
+                border-radius: 4px;
+            }
+
+            .tombol:hover {
+                background-color: #555;
+            }
+
+            .header {
+                background-color: black;
+                color: white;
+                padding: 30px;
+            }
+
+            .body {
+                background-color: lightgrey;
+                padding: 30px 30px 2500px;
+            }
+        </style>
+    </head>
+    <body>
+        <button id="tombol" class="tombol" title="Menuju ke Atas">Top</button>
+
+        <div class="header">
+            <b>Program Is Fun</b>
+        </div>
+        <div class="body">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum,
+            officiis cumque magnam molestias optio est blanditiis cum culpa
+            praesentium veritatis laborum minus reprehenderit ratione quam?
+            Deserunt laborum voluptates commodi ab quis porro dolor repellat
+            molestias natus labore, numquam repellendus voluptatibus tenetur
+            amet! Ullam quidem neque inventore, laborum labore doloremque iure
+            deleniti. Tenetur debitis, commodi explicabo molestias soluta aut
+            eveniet maxime deleniti, nemo esse cupiditate voluptate neque sunt
+            sequi voluptatem excepturi non molestiae nihil quibusdam. Unde
+            recusandae odit, assumenda quibusdam, explicabo quidem nam rerum non
+            dolorem ad saepe! Commodi dolore mollitia corporis libero officiis!
+            Reiciendis unde facilis totam tenetur, asperiores iusto!
+        </div>
+
+        <script>
+            let getTombol = document.getElementById("tombol");
+
+            window.addEventListener("scroll", function () {
+                if (
+                    document.body.scrollTop > 20 ||
+                    document.documentElement.scrollTop > 20
+                ) {
+                    tombol.style.display = "block";
+                } else {
+                    tombol.style.display = "none";
+                }
+            });
+
+            getTombol.addEventListener("click", function () {
+                document.body.scrollTop = 0;
+                document.documentElement.scrollTop = 0;
+            });
+        </script>
+    </body>
+</html>
